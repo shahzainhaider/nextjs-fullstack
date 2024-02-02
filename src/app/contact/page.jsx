@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable react/no-unescaped-entities */
 
 import React, { useState } from 'react'
 import {MdEmail} from 'react-icons/md'
@@ -68,21 +69,21 @@ const Contact = () => {
       <MdEmail className='text-red-600 mx-auto text-5xl'/>
       <p className='text-lg font-semibold text-center'>Email</p>
       <p className='text-center max-w-xs mx-auto text-black/60'>Lorem ipsum dolor sit amet concing elit. Offici veritatis quia voluparum.</p>
-      <p className='text-center mt-2'>Send Email -&gt;</p>
+      <p className='text-center mt-2'>Send Email</p>
 
     </div>
     <div className=" shadow-lg p-4">
       <MdEmail className='text-red-600 mx-auto text-5xl'/>
       <p className='text-lg font-semibold text-center'>Email</p>
       <p className='text-center max-w-xs mx-auto text-black/60'>Lorem ipsum dolor sit amet concing elit. Offici veritatis quia voluparum.</p>
-      <p className='text-center mt-2'>Send Email -&gt;</p>
+      <p className='text-center mt-2'>Send Email</p>
 
     </div>
     <div className=" shadow-lg p-4">
       <MdEmail className='text-red-600 mx-auto text-5xl'/>
       <p className='text-lg font-semibold text-center'>Email</p>
       <p className='text-center max-w-xs mx-auto text-black/60'>Lorem ipsum dolor sit amet concing elit. Offici veritatis quia voluparum.</p>
-      <p className='text-center mt-2'>Send Email -&gt;</p>
+      <p className='text-center mt-2'>Send Email</p>
 
     </div>
    </div>
