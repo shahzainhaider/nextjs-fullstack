@@ -5,6 +5,7 @@ import {MdEmail} from 'react-icons/md'
 
 const Contact = () => {
   const [user,setUser] = useState({username:'',email:'',phone:'',message:''});
+  const [loader , setLoader] = useState(false)
   const [status,setStatus] = useState(null);
 
   const handleChange = (e)=>{
@@ -15,6 +16,7 @@ const Contact = () => {
   const handleSubmit =async (e)=>{
     e.preventDefault()
     try {
+      setLoader(true)
       const response = await fetch('/api/contact',{
         method:'POST',
         headers:{
@@ -35,13 +37,26 @@ const Contact = () => {
           phone:'',
           message:''
         })
+        setLoader(false)
         setStatus('Success')
+        setTimeout(() => {
+          setStatus(false)
+          
+        }, 1000);
       }
       else{
+        setUser({
+          username:'',
+          email:'',
+          phone:'',
+          message:''
+        })
+        setLoader(false)
         setStatus('Error')
       }
     } catch (error) {
-      
+      setLoader(false)
+      console.log(error)
     }
 
   }
@@ -93,7 +108,7 @@ const Contact = () => {
       </div>
       {status === 'Success' && <p className='text-green-600 text-center'>Thank you for your message!</p>}
                 {status === 'Error' && <p className='text-red-600 text-center'>There was an error submitting your message. Please try again.</p>}
-      <button type='submit' className='mt-4 border border-gray-300 active:bg-slate-300 text-center py-3 px-2 rounded-xl bg-red-600 text-white hover:bg-transparent hover:text-black focus:ring-2 focus:ring-red-200 focus:border-red-600'>Send Message</button>
+      <button type='submit' className='mt-4 border border-gray-300 active:bg-slate-300 text-center py-3 px-2 rounded-xl bg-red-600 text-white hover:bg-transparent hover:text-black focus:ring-2 focus:ring-red-200 focus:border-red-600'>{loader?'Loading...':'send message'}</button>
       </form>
     </div>
    </div>

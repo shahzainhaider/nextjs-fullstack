@@ -18,7 +18,6 @@ const page =async ({params}) => {
     const data = result[0].details;
     const {title,backgroundImage,type,synopsis} = data
     title
-    // console.log(backgroundImage)
 
 
   return (
