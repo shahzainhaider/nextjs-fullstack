@@ -1,0 +1,4 @@
+.MainBanner{
+    background: url(../images/banner.jpg) no-repeat rgba(0,0,0,0.6);
+    background-blend-mode: multiply;
+}
